@@ -15,7 +15,7 @@ def generate_joke(topic: str) -> str:
         raise HTTPException(status_code=500, detail="Missing GROQ_API_KEY in environment")
 
     client = Groq()
-    model = os.getenv("GROQ_MODEL", "gpt-oss-20b")
+    model = os.getenv("GROQ_MODEL", "openai/gpt-oss-20b")
 
     completion = client.chat.completions.create(
         model=model,
